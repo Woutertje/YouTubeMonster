@@ -14,3 +14,5 @@ This project was created to run on a windows server, I'm sure that it will run o
 * PHP 5.4
 * MySQL
 * SMTP enabled
+* Create a database with the given tables in db/
+* Edit the config in core/config.php.tmp and rename it to config.php
