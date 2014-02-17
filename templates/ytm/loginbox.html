@@ -1,0 +1,46 @@
+<div id="cycle">
+	<div>
+		{shareblock}
+		<div class="logintools">
+			<div class="row">
+				<a href="javascript:var x = false;" class="login nextslide">Log in</a>
+				<a href="./register/" class="register">Register</a>
+			</div>
+			<div class="row">
+				<a href="./fblogin/" class="fblogin">Log in with facebook</a>
+			</div>
+		</div>
+	</div>
+	<div>
+		<h2>Account login</h2>
+		<form action="" method="post">
+			<p>
+				<input type="text" value="Username" name="username" onfocus="if(this.value == 'Username') value = '';" onblur="if(this.value == '') value = 'Username';" />
+			</p>
+			<p>
+				<input type="password" value="Password" name="password" onfocus="if(this.value == 'Password') value = '';" onblur="if(this.value == '') value = 'Password';" />
+			</p>
+			<p>
+				<input type="submit" value="Log in" name="login" />
+			</p>
+		</form>
+		<div class="logintools">
+			<div class="row">
+				<a href="javascript:var x = false;" class="login nextslide">Share this!</a>
+				<a href="./register/" class="register">Register</a>
+			</div>
+			<div class="row">
+				<a href="./fblogin/" class="fblogin">Log in with facebook</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#cycle').cycle({
+		fx:      'scrollDown', 
+		next:   '.nextslide', 
+		timeout:  0, 
+		//easing:  'easeInOutBack',
+		height: 175
+	});
+</script>

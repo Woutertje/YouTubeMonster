@@ -1,0 +1,26 @@
+<h1>Playlist editor</h1>
+<form action="" method="post">
+	<p>
+		<b>Playlist title</b><br />
+		<input type="text" name="title" value="{title}" />
+	</p>
+	<p>
+		<b>Playlist URL-title</b><br />
+		Make sure you only use numbers, letters and -'s. No spaces or anything else.<br />
+		<input type="text" name="urltitle" value="{urltitle}" />
+	</p>
+	<p>
+		<input type="submit" value="Save" name="save" />
+	</p>
+	[repeater:categories]
+		<h3>{categoryname} <!--{categoryid}--></h3>
+		<p>
+		[repeater:channels]
+			<label><input type="checkbox"{channelchecked} name="channel[{channelid}]" /> {channelname}</label>
+		[/repeater:channels]
+		</p>
+	[/repeater:categories]
+	<p>
+		<input type="submit" value="Save" name="save" />
+	</p>
+</form>

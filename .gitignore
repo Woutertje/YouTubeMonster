@@ -2,3 +2,8 @@
 ################
 
 core/config.php
+
+# Cache files #
+###############
+
+cache/*

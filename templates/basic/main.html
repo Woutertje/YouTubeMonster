@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<base href="{base}" />
+		<title>{pagetitle}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="{metakeywords}" />
+		<meta name="description" content="{metacontent}" />
+		<meta property="og:image" content="{pageimage}" />
+		<link rel="stylesheet" href="./templates/basic/style/template.css" type="text/css" />[repeater:cssfiles]
+		<link type="text/css" href="{file}" rel="stylesheet" />[/repeater:cssfiles]
+		<link rel="shortcut icon" href="./templates/basic/images/favicon.ico" />
+		<script type="text/javascript" src="./templates/basic/js/jquery.js"></script>[repeater:jsfiles]
+		<script src="{file}" type="text/javascript"></script>[/repeater:jsfiles]
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<h1><a href="./">Youtube stream</a> project basic template</h1>
+				{topnav}
+			</div>
+			<div id="contentwrapper">
+				<div id="leftbar">
+					<div id="pagetools">
+						{pagetools}
+					</div>
+					<p>Category menu</p>
+					{categorymenu}
+					<div id="shareblock">
+						{shareblock}
+					</div>
+				</div>
+				<div id="content">
+					{loginerror}
+					{page}
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			Youtube stream project basic template &copy; {year}
+		</div>
+	</body>
+</html>
