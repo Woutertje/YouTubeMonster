@@ -9,8 +9,8 @@
 	# ==================================
 	# Debug outcome
 	# ==================================
-	function debug($msg){
-		echo $msg.'<br />';
+	function debug($msg, $color = '#000'){
+		echo '<div style="color: '.$color.'">'.$msg.'</div>';
 	}
 	
 	# ==================================
@@ -27,3 +27,38 @@
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 	');
 	debug('Created `dbupdate` table if it didn\'t excist yet.');
+	
+	# Fetch list of inserted database files
+	$insertedfiles = array();
+	foreach($db->query('
+		SELECT `file`
+		FROM `dbupdate`
+	') as $insertedfile)
+		$insertedfiles[] = $insertedfile['file'];
+	
+	# ==================================
+	# Loop trough the database files and
+	# insert new files into the database
+	# ==================================
+	debug('=== Patching ===');
+	foreach(scandir('../db/') as $file){
+		if(end(explode('.', $file)) != 'sql')
+			continue;
+			
+		if(in_array($file, $insertedfiles)){
+			debug($file, '#ddd');
+		}
+		else{
+			$db->query(file_get_contents('../db/'.$file));
+			$db->insert('dbupdate', array(
+				'file' => $file
+			));
+			debug($file, '#00A000');
+		}
+    }
+	
+	# ==================================
+	# Finish
+	# ==================================
+	debug('=== DB patched ===');
+	debug('Updating took '.number_format((((strtotime('now') + microtime()) - $t) * 1000), 0, '.', '').' miliseconds.');
