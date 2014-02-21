@@ -1,52 +1,46 @@
 <?php
-	$GLOBALS['config'] = array(
+
+$GLOBALS['config'] = array(
+
+	# Database info (required)
+	'database' => array(
+		'host' => 'localhost',
+		'user' => '',
+		'pass' => '',
+		'database' => 'youtubemonster'
+	),
 	
-		# Database info (required)
-		'database' => array(
-			'host' => 'localhost',
-			'user' => '',
-			'pass' => '',
-			'database' => 'youtubemonster'
-		),
-		
-		# SMTP/mail info
-		'mail' => array(
-			'SMTPSecure' => 'ssl',
-			'Host' => 'smtp.gmail.com',
-			'Port' => '465',
-			'Username' => '',
-			'Password' => '',
-			'SendFromAddress' => '',
-			'SendFromName' => 'YouTubeMonster'
-		),
-		
-		# Twitter details
-		'twitter' => array(
-			'consumerKey' => '',
-			'consumerSecret' => '',
-			'accessToken' => '',
-			'accessTokenSecret' => ''
-		),
-		
-		# Password encryption (required)
-		'password' => array(
-			'salt' => '',
-			'rounds' => 10
-		),
-		
-		# File roots
-		'templateroot' => 'templates/',
-		'classesroot' => 'classes/',
-		
-		# Root url of the website (required)
-		'baseurl' => 'http://youtubemonster.com/',
-		
-		# Name of the template folder to load
-		'template' => 'ytm'
-	);
+	# SMTP/mail info
+	'mail' => array(
+		'SMTPSecure' => 'ssl',
+		'Host' => 'smtp.gmail.com',
+		'Port' => '465',
+		'Username' => '',
+		'Password' => '',
+		'SendFromAddress' => '',
+		'SendFromName' => 'YouTubeMonster'
+	),
 	
-	# ===============================
-	# Current template
-	# ===============================
-	$GLOBALS['domaintitle'] = 'YouTubeMonster';
-?>
+	# Twitter details
+	'twitter' => array(
+		'consumerKey' => '',
+		'consumerSecret' => '',
+		'accessToken' => '',
+		'accessTokenSecret' => ''
+	),
+	
+	# Password encryption (required)
+	'password' => array(
+		'salt' => '',
+		'rounds' => 10
+	),
+	
+	# File root
+	'root' => './',
+	
+	# Root url of the website (required)
+	'baseurl' => 'http://youtubemonster.com/',
+	
+	# Name of the template folder to load
+	'template' => 'ytm'
+);

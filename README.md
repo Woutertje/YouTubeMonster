@@ -3,9 +3,15 @@
 YouTubeMonster is an opensource PHP project. I created this project for fun. If you want to make some changes, for the project and send a pull request, I'll seriously review them for deployment. Find some security issues? Please submit the issue on GitHub.
 https://github.com/FuturePortal/YTM
 
+YouTubeMonster is written from scratch. This to make everything so fast and efficient as possible. Got some improvements? Feel free to fork!
+
 ### Not live yet
 
 I'm currenlty working on a projects setup for GitHub, this code is not deployed live yet! But it will be! Soon!
+
+# Coding standards
+
+All Pull Requests should follow the [PSR-2 standard](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md). This will improve the overal readability of the project.
 
 # Setup YouTubeMonster
 

@@ -10,10 +10,20 @@
 	# ===============================
 	# AUTOLOADER
 	# ===============================
-	function loadclass($name){
-		$file = $GLOBALS['config']['classesroot'].strtolower($name).'.php';
-		if(!file_exists($file))
-			die('<b>core file</b> startup: [ERROR] new "'.strtolower($name).'" class not found.');
+	function loadclass($name)
+	{
+		global $config;
+		
+		if (strpos($name, 'Page') > 0) {
+			$file = $config['root'].'pages/' . $name . '.php';
+		} else {
+			$file = $config['root'].'classes/' . $name . '.php';
+		}
+	
+		if (!file_exists($file)) {
+			die('<b>[FATAL ERROR]</b> Class ' . $name . ' (' . $file . ') was not found.');
+		}
+		
 		require_once $file;
 	}
 	spl_autoload_register('loadclass');
@@ -140,9 +150,8 @@
 	function starttimer($name){
 		$GLOBALS['timers'][$name] = strtotime('now') + microtime();
 	}
-	function timertime($name, $htmlcomment = true){
-		echo (($htmlcomment)?'<!-- '.ucfirst($name).': ':'').number_format((((strtotime('now') + microtime()) - $GLOBALS['timers'][$name]) * 1000), 2, '.', '').'ms'.(($htmlcomment)?' -->':'');
-		return '';
+	function timertime($name){
+		return number_format((((strtotime('now') + microtime()) - $GLOBALS['timers'][$name]) * 1000), 0, '.', ',');
 	}
 	
 	# ===============================
