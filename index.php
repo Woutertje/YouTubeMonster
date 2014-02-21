@@ -8,7 +8,7 @@ require 'core/config.php';
 require 'core/startup.php';
 
 # Strip all ? shit from facebook
-if(strpos(selfurl(), '?')){
+if (strpos(selfurl(), '?')) {
 	header("Location: ".strstr(selfurl(), '?', true));
 	return;
 }
@@ -27,9 +27,10 @@ $template = new template('main.html');
 # ===================================
 # Fill content
 # ===================================
-$page = empty($_GET['page'])?'home':$_GET['page'];
-switch($page){
+$page = empty($_GET['page']) ? 'home' : $_GET['page'];
+switch ($page) {
 	default:
+		header('HTTP/1.0 404 Not Found');
 		$page = new notFoundPage();
 	break;
 }
