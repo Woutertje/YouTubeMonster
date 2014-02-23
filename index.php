@@ -29,10 +29,13 @@ $template = new template('main.html');
 # ===================================
 $page = empty($_GET['page']) ? 'home' : $_GET['page'];
 switch ($page) {
+    case 'home':
+        $page = new homePage();
+        break;
 	default:
 		header('HTTP/1.0 404 Not Found');
 		$page = new notFoundPage();
-	break;
+	    break;
 }
 $template->setTag('page', $page->getContent());
 
@@ -54,7 +57,7 @@ $template
 	->setTag('domain', $_SERVER['SERVER_NAME'])
 	->setTag('facebookappid', $GLOBALS['fbappid'])
 	->setTag('metacontent', $GLOBALS['seo_description'])
-	->setTag('templateroot', $config['root'] . 'templates/' . $GLOBALS['config']['template'], '', false)
+	->setTag('templateroot', 'templates/' . $GLOBALS['config']['template'], '', false)
 	->setTag('curpage', $page->getFixedTitle())
 	->setTag('pagetitle', $page->getTitle())
 	->setTag('base', $GLOBALS['config']['baseurl'])
