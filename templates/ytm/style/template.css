@@ -151,12 +151,17 @@ nav{ position: absolute; z-index: 479; top: 200px; bottom: 40px; width: 100%; ov
 
 /* ===== Homepage ===== */
 
-.homebox{ max-width: 370px; margin: 0 auto; height: 200px; margin-top: 20px; background: #fff; border-radius: 5px; padding: 10px; }
+.homebox{ max-width: 370px; margin: 0 auto; height: 200px; margin-top: 20px; background: #fff; border-radius: 5px; padding: 10px; overflow: hidden; }
 .newestinfo{ height: 260px; margin-top: 0px; }
-.darkbox{ background: url("../images/fabricbg.png"); color: #ddd; }
+.categorybox{ cursor: pointer; }
+.darkbox{ background: url("../images/fabricbg.png"); color: #ddd; cursor: default; }
 .homecateogry, .morebox{ max-width: 370px; margin: 0 auto; padding: 5px 10px; border-radius: 5px; display: block; }
 .homecateogry{ background: url("../images/fabricbg.png"); height: 30px; font-size: 20px; }
 .morebox{ color: #333333; background: #fff; height: 20px; font-size: 14px; margin-top: 20px; }
+.categorybox .image{ width: 100%; height: 165px; background-position: center center; background-size: cover; background-color: #F6F6F6; margin-bottom: 10px; border-radius: 5px; }
+.darkbox .btn{ padding: 5px 10px; background: #b18e13; text-align: center; border-radius: 5px; border-bottom: 3px solid #9C7D10; color: #333; display: block; margin: 10px auto 0px auto; width: 150px; }
+.darkbox ul{ list-style: disc; margin-left: 20px; }
+.darkbox li::marker{ color: #b18e13; }
 
 /* ===== Popup box ===== */
 

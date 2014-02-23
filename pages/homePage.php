@@ -13,14 +13,14 @@ class homePage extends page
             'newestvids',
             array(
                 array(
-                    'title' => 'Test video 1',
-                    'url' => 'c/dnb/test1',
-                    'imageurl' => 'a',
+                    'title' => 'Netsky - Memory Lane',
+                    'url' => 'c/dnb/netsky-memory-lane',
+                    'imageurl' => 'http://img.youtube.com/vi/cG7cRDcPY3k/0.jpg',
                 ),
                 array(
-                    'title' => 'Test video 2',
-                    'url' => 'c/dnb/test2',
-                    'imageurl' => 'b',
+                    'title' => '"A Journey Through Sound" ~ Liquid Drum & Bass Mix.',
+                    'url' => 'c/dnb/a-journey-trough-sound',
+                    'imageurl' => 'http://img.youtube.com/vi/g9iqp0sIvSg/0.jpg',
                 ),
             )
         );
@@ -52,7 +52,7 @@ class homePage extends page
             'musiccategories',
             array(
                 array(
-                    'title' => 'Drumm and Base',
+                    'title' => 'Drum and Base',
                     'url' => 'c/dnb',
                     'imageurl' => 'a',
                 ),

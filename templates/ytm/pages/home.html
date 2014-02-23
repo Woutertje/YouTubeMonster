@@ -2,35 +2,58 @@
     <div class="col3">
         <a class="homecateogry" href="./categories">Categories</a>
         [repeater:categories]<div class="homebox categorybox" data-href="{url}" data-image="{image}">
-        <div class="image"></div>
-        <h4>{title}</h4>
-    </div>[/repeater:categories]
+            <div class="image"></div>
+            <h4>{title}</h4>
+        </div>[/repeater:categories]
         <a href="./categories" class="morebox">All categories</a>
     </div>
     <div class="col3">
         <a class="homecateogry" href="./music">Music</a>
         <div class="homebox categorybox darkbox">
             <h3>Music player</h3>
-            <p>Some bla about the music player</p>
-            <p><button>Music player</button></p>
+            <p>Listen to the latest music by the genres of your choice.</p>
+            <p>
+                <ul>
+                    <li>Select the genres you like</li>
+                    <li>Newest songs first</li>
+                    <li>Randomise latest songs</li>
+                </ul>
+            </p>
+            <p><a href="./music" class="btn">Music player</a></p>
         </div>
         [repeater:musiccategories]<div class="homebox categorybox" data-href="{url}" data-image="{image}">
-        <div class="image"></div>
-        <h4>{title}</h4>
-    </div>[/repeater:musiccategories]
+            <div class="image"></div>
+            <h4>{title}</h4>
+        </div>[/repeater:musiccategories]
         <a href="./music" class="morebox">All music categories</a>
     </div>
     <div class="col3">
         <div class="homebox newestinfo darkbox">
             <h2>The newest video's</h2>
-            <p>Bla bla bla bla.</p>
-            <button>Check all the latest here</button>
+            <p>YouTubeMonster is constantly checking for new YouTube video's from the most popular channels,
+                inserted in easy categories!</p>
+            <p>If you create an account, you can make your own categories with your favorite channels.</p>
+            <p>Always the newest video's from YouTube!</p>
+            <p><a href="./new" class="btn">Latest video's</a></p>
         </div>
         [repeater:newestvids]<div class="homebox categorybox" data-href="{url}" data-image="{imageurl}">
-        <div class="image"></div>
-        <h4>{title}</h4>
-    </div>[/repeater:newestvids]
+            <div class="image"></div>
+            <h4>{title}</h4>
+        </div>[/repeater:newestvids]
         <a href="./latest" class="morebox">Browse the newest video's</a>
     </div>
     <div class="clear"></div>
+    <script type="text/javascript">
+        $(function() {
+            $('.categorybox').each(function() {
+                $(this).children('.image').css('background-image' , 'url(' + $(this).attr('data-image') + ')');
+                var url = $(this).attr('data-href');
+                if (url != null && url != '') {
+                    $(this).click(function(){
+                        window.location = url;
+                    });
+                }
+            });
+        });
+    </script>
 </div>
