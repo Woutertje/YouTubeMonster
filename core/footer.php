@@ -50,6 +50,6 @@
 					<div style="padding-bottom: 6px;"><fb:like href="https://www.facebook.com/pages/Youtubemonster/215125995328510" send="false" width="250" show_faces="false" font="" data-layout="button_count"></fb:like></div>
 					<div><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://youtubemonster.com/" data-via="YT_Monster">Tweet</a></div>
 					<h4>Open Source on GitHub</h4>
-					<iframe src="http://ghbtns.com/github-btn.html?user=FuturePortal&repo=YouTubeMonster&type=watch" allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+					<iframe src="http://ghbtns.com/github-btn.html?user=FuturePortal&repo=YouTubeMonster&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="250" height="20"></iframe>
 				</div>';
 	timertime('footer');
