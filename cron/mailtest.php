@@ -1,19 +1,21 @@
 <?php
-	# setup
-	$t = strtotime('now') + microtime();
-	include('../core/config.php');
-	$GLOBALS['config']['classesroot'] = '../classes/';
-	$GLOBALS['config']['templateroot'] = '../templates/';
-	include('../core/startup.php');
-	
-	# Globals
-	global $db;
-	
-	# Reset todays ratings
-	$mail = new templatemail('just testing', 'test', array(
-		'email' => 'user'
-	));
-	if($mail->send())
-		echo 'Mail sent.';
-	else
-		echo 'Mail not sent.';
+
+# Globals
+global $config;
+
+# setup
+include('../core/config.php');
+$config['root'] = '../';
+include('../core/startup.php');
+
+# Make sure only admins can run this file
+onlyAdmin();
+
+# Reset todays ratings
+$mail = new templatemail('just testing', 'test', array(
+    'email' => 'user'
+));
+if($mail->send())
+    echo 'Mail sent.';
+else
+    echo 'Mail not sent.';

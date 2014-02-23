@@ -34,6 +34,9 @@ $GLOBALS['config'] = array(
 		'salt' => '',
 		'rounds' => 10
 	),
+
+    # Admin IP's (on empty everyone can run cronjobs/admin files)
+    'adminIps' => array(),
 	
 	# File root
 	'root' => './',

@@ -35,7 +35,7 @@
 
 			# Subject from multilanguage table
 			if(empty($subject)) $subject = 'No subject';
-			$this->subject = $subject.' | '.$config['domaintitle'];
+			$this->subject = $subject.' | YouTubeMonster';
 			
 			# Set receivers
 			$this->receivers = $receivers;
@@ -66,19 +66,19 @@
 		
 			# Set unsubscibe link or system message
 			if(empty($this->$unsubscribelink))
-				$mail->setcontent('notice', 'This is a system message, therefor you can\'t unsubscribe yourself of this e-mail.');
+				$mail->setTag('notice', 'This is a system message, therefor you can\'t unsubscribe yourself of this e-mail.');
 			else
-				$mail->setcontent('notice', '<a href="'.$this->unsubscribelink().'">Unsubscribe from this mailing</a>');
+				$mail->setTag('notice', '<a href="'.$this->unsubscribelink().'">Unsubscribe from this mailing</a>');
 			
 			# Replace content
-			$mail->setcontent('message', $this->content);
-			$mail->setcontent('title', $this->subject);
-			$mail->setcontent('headertitle', $GLOBALS['domain']['title']);
+			$mail->setTag('message', $this->content);
+			$mail->setTag('title', $this->subject);
+			$mail->setTag('headertitle', $GLOBALS['domain']['title']);
 			
 			# Return result
-			$mail->setcontent('baseurl', $GLOBALS['config']['baseurl']);
-			$mail->setcontent('templateroot', 'templates/'.$GLOBALS['config']['template'].'/');
-			return $mail->display();
+			$mail->setTag('baseurl', $GLOBALS['config']['baseurl']);
+			$mail->setTag('templateroot', 'templates/'.$GLOBALS['config']['template'].'/');
+			return $mail->getContent();
 		}
 		
 		# ================================
