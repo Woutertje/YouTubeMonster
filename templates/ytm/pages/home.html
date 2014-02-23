@@ -1,0 +1,34 @@
+<div class="wrap wrapspace">
+    <div class="col3">
+        <a class="homecateogry" href="./categories">Categories</a>
+        [repeater:categories]<div class="homebox categorybox" data-href="{url}" data-image="{image}">
+        <div class="image"></div>
+        <h4>{title}</h4>
+    </div>[/repeater:categories]
+        <a href="./categories" class="morebox">All categories</a>
+    </div>
+    <div class="col3">
+        <a class="homecateogry" href="./music">Music</a>
+        <div class="homebox categorybox darkbox">
+            <h3>Music player</h3>
+            <p>Some bla about the music player</p>
+            <p><button>Music player</button></p>
+        </div>
+        [repeater:musiccategories]<div class="homebox categorybox" data-href="{url}" data-image="{image}">
+        <div class="image"></div>
+        <h4>{title}</h4>
+    </div>[/repeater:musiccategories]
+        <a href="./music" class="morebox">All music categories</a>
+    </div>
+    <div class="col3">
+        <div class="homebox newestinfo">
+            Some bla about the newest video's
+        </div>
+        [repeater:newestvids]<div class="homebox categorybox" data-href="{url}" data-image="{imageurl}">
+        <div class="image"></div>
+        <h4>{title}</h4>
+    </div>[/repeater:newestvids]
+        <a href="./latest" class="morebox">Browse the newest video's</a>
+    </div>
+    <div class="clear"></div>
+</div>
