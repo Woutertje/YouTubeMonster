@@ -54,9 +54,9 @@ class database
     public function __construct($host, $user, $password, $database)
     {
         $this->host = $host;
-        $this->$user = $user;
-        $this->$password = $password;
-        $this->$database = $database;
+        $this->user = $user;
+        $this->password = $password;
+        $this->database = $database;
     }
 
     # ===============================
