@@ -141,13 +141,22 @@ nav{ position: absolute; z-index: 479; top: 200px; bottom: 40px; width: 100%; ov
 /* ===== Responsive columns ===== */
 
 .col3{ float: left; }
-.col3{ width: 30%; margin-right: 5%; }
-.col3:first-child{ margin-right: 0; }
+.col3{ width: 32%; margin-left: 2%; }
+.col3:first-child{ margin-left: 0; }
 
 @media (max-width:800px){
-    .col3{ float: none; width: 100%; margin-top: 20px; }
+    .col3{ float: none; width: 100%; margin: 20px 0px 0px; }
     .col3:first-child{ margin-top: 0; }
 }
+
+/* ===== Homepage ===== */
+
+.homebox{ max-width: 370px; margin: 0 auto; height: 200px; margin-top: 20px; background: #fff; border-radius: 5px; padding: 10px; }
+.newestinfo{ height: 260px; margin-top: 0px; }
+.darkbox{ background: url("../images/fabricbg.png"); color: #ddd; }
+.homecateogry, .morebox{ max-width: 370px; margin: 0 auto; padding: 5px 10px; border-radius: 5px; display: block; }
+.homecateogry{ background: url("../images/fabricbg.png"); height: 30px; font-size: 20px; }
+.morebox{ color: #333333; background: #fff; height: 20px; font-size: 14px; margin-top: 20px; }
 
 /* ===== Popup box ===== */
 
