@@ -9,8 +9,8 @@ require 'core/startup.php';
 
 # Strip all ? shit from facebook
 if (strpos(selfurl(), '?')) {
-	header("Location: ".strstr(selfurl(), '?', true));
-	return;
+    header("Location: ".strstr(selfurl(), '?', true));
+    return;
 }
 	
 # Init account
@@ -29,13 +29,18 @@ $template = new template('main.html');
 # ===================================
 $page = empty($_GET['page']) ? 'home' : $_GET['page'];
 switch ($page) {
+    case 'cateogories':
+    case 'category':
+    case 'c':
+        $page = new categoryPage();
+        break;
     case 'home':
         $page = new homePage();
         break;
-	default:
-		header('HTTP/1.0 404 Not Found');
-		$page = new notFoundPage();
-	    break;
+    default:
+        header('HTTP/1.0 404 Not Found');
+        $page = new notFoundPage();
+        break;
 }
 $template->setTag('page', $page->getContent());
 
@@ -43,25 +48,25 @@ $template->setTag('page', $page->getContent());
 # Important blocks
 # ===================================
 $template
-	->parseFile('topnav', './core/menu.php')
-	->parseFile('footer', './core/footer.php')
-	->parseFile('loginbox', './pages/loginbox.php');
+    ->parseFile('topnav', './core/menu.php')
+    ->parseFile('footer', './core/footer.php')
+    ->parseFile('loginbox', './pages/loginbox.php');
 
 # ===================================
 # Global repalcements
 # ===================================
 $template
-	->setTagLoop('jsfiles', $GLOBALS['jsfiles'])
-	->setTagLoop('cssfiles', $GLOBALS['cssfiles'])
-	->setTag('pageimage', (empty($GLOBALS['pageimage'])) ? '{base}{templateroot}/images/logo.png' : $GLOBALS['pageimage'])
-	->setTag('domain', $_SERVER['SERVER_NAME'])
-	->setTag('facebookappid', $GLOBALS['fbappid'])
-	->setTag('metacontent', $GLOBALS['seo_description'])
-	->setTag('templateroot', 'templates/' . $GLOBALS['config']['template'], '', false)
-	->setTag('curpage', $page->getFixedTitle())
-	->setTag('pagetitle', $page->getTitle())
-	->setTag('base', $GLOBALS['config']['baseurl'])
-	->setTag('year', date('Y'));
+    ->setTagLoop('jsfiles', $GLOBALS['jsfiles'])
+    ->setTagLoop('cssfiles', $GLOBALS['cssfiles'])
+    ->setTag('pageimage', (empty($GLOBALS['pageimage'])) ? '{base}{templateroot}/images/logo.png' : $GLOBALS['pageimage'])
+    ->setTag('domain', $_SERVER['SERVER_NAME'])
+    ->setTag('facebookappid', $GLOBALS['fbappid'])
+    ->setTag('metacontent', $GLOBALS['seo_description'])
+    ->setTag('templateroot', 'templates/' . $GLOBALS['config']['template'], '', false)
+    ->setTag('curpage', $page->getFixedTitle())
+    ->setTag('pagetitle', $page->getTitle())
+    ->setTag('base', $GLOBALS['config']['baseurl'])
+    ->setTag('year', date('Y'));
 
 # ===================================
 # Finish
