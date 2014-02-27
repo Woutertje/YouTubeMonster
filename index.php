@@ -17,7 +17,7 @@ if (strpos(selfurl(), '?')) {
 require 'core/account.php';
 
 # Set page globals
-global $db, $curpage, $loggedin, $config;
+global $db, $curpage, $loggedin, $config, $menu;
 
 # ===================================
 # START TEMPLATE
@@ -42,8 +42,9 @@ $template->setTag('page', $page->getContent());
 # ===================================
 # Important blocks
 # ===================================
+require 'core/menu.php';
 $template
-	->parseFile('topnav', './core/menu.php')
+	->setTagLoop('menu', $menu)
 	->parseFile('footer', './core/footer.php')
 	->parseFile('loginbox', './pages/loginbox.php');
 
